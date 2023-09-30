@@ -1,11 +1,12 @@
 <script setup>
-  import MainSearch from './MainSearch.vue'
+import MainSearch from './MainSearch.vue'
+import MainCards from './MainCards.vue';
 </script>
 
 <template>
   <div class="wrapper">
     <MainSearch />
-    <h1 class="font-bold text-orange-500">Howdy Neighbor</h1>
+    <MainCards />
   </div>
 </template>
 
