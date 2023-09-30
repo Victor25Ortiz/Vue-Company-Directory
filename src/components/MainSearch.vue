@@ -24,10 +24,10 @@
   .wrapper {
     @apply relative flex w-full items-stretch;
     .search {
-      @apply rounded-md border-0 px-8 py-4 text-slate-700 placeholder-slate-400 outline-none focus:ring focus:ring-yellow-500;
+      @apply rounded-md border-0 px-8 py-4 text-blue-700 placeholder-orange-400 outline-none focus:ring focus:ring-purple-500;
     }
     .icon {
-      @apply absolute right-0 z-10 py-4 pr-8 text-slate-400;
+      @apply absolute right-0 z-10 py-4 pr-8 text-red-400;
     }
   }
 </style>

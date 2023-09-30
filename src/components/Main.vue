@@ -5,7 +5,7 @@
 <template>
   <div class="wrapper">
     <MainSearch />
-    <h1>Hello There</h1>
+    <h1 class="font-bold text-orange-500">Howdy Neighbor</h1>
   </div>
 </template>
 
