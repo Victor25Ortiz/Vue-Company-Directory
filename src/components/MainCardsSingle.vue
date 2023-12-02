@@ -1,35 +1,13 @@
 <script setup>
-  import { ref } from 'vue'
   import { faker } from '@faker-js/faker'
 
-  import useAPI from '@/composables/useAPI'
-  const { getDepartment } = useAPI()
+  const firstName = faker.name.firstName()
+  const lastName = faker.name.lastName()
+  const fullName = `${firstName} ${lastName}`
 
   const selectCard = () => {
-    console.log(`${props.employee.name} selected`)
+    console.log(`${fullName} selected`)
   }
-
-  const props = defineProps({
-    employee: {
-      type: Object,
-      required: true,
-      default: () => {
-        return {
-          createdAt: '2022-01-01',
-          departmentId: '123',
-          email: 'john.doe@example.com',
-          employeeId: '123',
-          name: 'John Doe',
-          quote: 'Really Cool quote',
-          title: 'Position',
-          updatedAt: '2022-01-01',
-        }
-      },
-    },
-  })
-
-  const departmentResponse = await getDepartment(props.employee.departmentId)
-  const department = ref(departmentResponse)
 </script>
 
 <template>
@@ -38,9 +16,9 @@
       <img :src="faker.internet.avatar()" alt="" srcset="" />
     </div>
     <div class="card-details">
-      <p class="card-details-name">{{ props.employee.name }}</p>
-      <p class="card-details-job">{{ props.employee.title }}, {{ department.name }}</p>
-      <p class="card-details-quote">"{{ props.employee.quote }}"</p>
+      <p class="card-details-name">{{ fullName }}</p>
+      <p class="card-details-job">{{ faker.name.jobTitle() }}, {{ faker.name.jobArea() }}</p>
+      <p class="card-details-quote">"{{ faker.lorem.paragraph() }}"</p>
     </div>
   </div>
 </template>
